@@ -19,7 +19,7 @@ button {
 form {
 	border: 3px solid blue;
 	border-radius: 10px;
-	display: flex;
+	display: none;
 	flex-direction: column;
 	padding: 1em;
 	margin-left: 35%;
