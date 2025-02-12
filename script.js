@@ -15,7 +15,28 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function populateTable() {
-	for (let i = 0; i < myLibrary.length; i++) {}
+	let libraryTable = document.querySelector("tbody");
+	libraryTable.textContent = "";
+	for (let i = 0; i < myLibrary.length; i++) {
+		let book = myLibrary[i];
+		let tableRow = document.createElement("tr");
+		let bookTitle = document.createElement("td");
+		let bookAuthor = document.createElement("td");
+		let bookPages = document.createElement("td");
+		let bookRead = document.createElement("td");
+		let checkbox = document.createElement("input");
+		libraryTable.appendChild(tableRow);
+		tableRow.appendChild(bookTitle);
+		bookTitle.textContent = `${book.title}`;
+		tableRow.appendChild(bookAuthor);
+		bookAuthor.textContent = `${book.author}`;
+		tableRow.appendChild(bookPages);
+		bookPages.textContent = `${book.pages}`;
+		tableRow.appendChild(bookRead);
+		bookRead.appendChild(checkbox);
+		checkbox.setAttribute("type", "checkbox");
+		checkbox.checked = book.read;
+	}
 }
 
 let newBookBtn = document.querySelector("#new-book");
@@ -31,5 +52,5 @@ submitBtn.addEventListener("click", (e) => {
 	let pages = document.querySelector("#pages").value;
 	let read = document.querySelector("#read").checked;
 	addBookToLibrary(title, author, pages, read);
-	console.log(myLibrary);
+	populateTable();
 });
