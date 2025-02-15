@@ -12,10 +12,6 @@ body {
 	text-align: center;
 }
 
-button {
-	margin-bottom: 1.5em;
-}
-
 form {
 	border: 3px solid blue;
 	border-radius: 10px;

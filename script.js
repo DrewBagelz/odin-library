@@ -31,6 +31,8 @@ function populateTable() {
 		const bookPages = document.createElement("td");
 		const bookRead = document.createElement("td");
 		const checkbox = document.createElement("input");
+		const removeBook = document.createElement("td");
+		const removeBtn = document.createElement("button");
 		libraryTable.appendChild(tableRow);
 		tableRow.appendChild(bookTitle);
 		bookTitle.textContent = `${book.title}`;
@@ -42,6 +44,9 @@ function populateTable() {
 		bookRead.appendChild(checkbox);
 		checkbox.setAttribute("type", "checkbox");
 		checkbox.checked = book.read;
+		tableRow.appendChild(removeBook);
+		removeBook.appendChild(removeBtn);
+		removeBtn.textContent = "X";
 	}
 }
 
