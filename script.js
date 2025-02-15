@@ -47,7 +47,15 @@ function populateTable() {
 		tableRow.appendChild(removeBook);
 		removeBook.appendChild(removeBtn);
 		removeBtn.textContent = "X";
+		removeBtn.addEventListener("click", () => {
+			removeFromLibrary(book);
+		});
 	}
+}
+
+function removeFromLibrary(index) {
+	myLibrary.splice(index, 1);
+	populateTable();
 }
 
 function resetForm() {
