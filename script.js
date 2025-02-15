@@ -1,4 +1,8 @@
 let form = document.querySelector("form");
+let titleInput = document.querySelector("#title");
+let authorInput = document.querySelector("#author");
+let pagesInput = document.querySelector("#pages");
+let readStatus = document.querySelector("#read");
 
 const myLibrary = [];
 
@@ -39,6 +43,14 @@ function populateTable() {
 	}
 }
 
+function resetForm() {
+	titleInput.value = "";
+	authorInput.value = "";
+	pagesInput.value = "";
+	readStatus.checked = false;
+	form.style.display = "none";
+}
+
 let newBookBtn = document.querySelector("#new-book");
 newBookBtn.addEventListener("click", () => {
 	form.style.display = "block";
@@ -53,4 +65,5 @@ submitBtn.addEventListener("click", (e) => {
 	let read = document.querySelector("#read").checked;
 	addBookToLibrary(title, author, pages, read);
 	populateTable();
+	resetForm();
 });
