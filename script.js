@@ -1,8 +1,10 @@
-let form = document.querySelector("form");
-let titleInput = document.querySelector("#title");
-let authorInput = document.querySelector("#author");
-let pagesInput = document.querySelector("#pages");
-let readStatus = document.querySelector("#read");
+const form = document.querySelector("form");
+const titleInput = document.querySelector("#title");
+const authorInput = document.querySelector("#author");
+const pagesInput = document.querySelector("#pages");
+const readStatus = document.querySelector("#read");
+const newBookBtn = document.querySelector("#new-book");
+const submitBtn = document.querySelector("#submit");
 
 const myLibrary = [];
 
@@ -23,12 +25,12 @@ function populateTable() {
 	libraryTable.textContent = "";
 	for (let i = 0; i < myLibrary.length; i++) {
 		let book = myLibrary[i];
-		let tableRow = document.createElement("tr");
-		let bookTitle = document.createElement("td");
-		let bookAuthor = document.createElement("td");
-		let bookPages = document.createElement("td");
-		let bookRead = document.createElement("td");
-		let checkbox = document.createElement("input");
+		const tableRow = document.createElement("tr");
+		const bookTitle = document.createElement("td");
+		const bookAuthor = document.createElement("td");
+		const bookPages = document.createElement("td");
+		const bookRead = document.createElement("td");
+		const checkbox = document.createElement("input");
 		libraryTable.appendChild(tableRow);
 		tableRow.appendChild(bookTitle);
 		bookTitle.textContent = `${book.title}`;
@@ -50,19 +52,16 @@ function resetForm() {
 	readStatus.checked = false;
 	form.style.display = "none";
 }
-
-let newBookBtn = document.querySelector("#new-book");
 newBookBtn.addEventListener("click", () => {
 	form.style.display = "block";
 });
 
-let submitBtn = document.querySelector("#submit");
 submitBtn.addEventListener("click", (e) => {
 	e.preventDefault();
-	let title = document.querySelector("#title").value;
-	let author = document.querySelector("#author").value;
-	let pages = document.querySelector("#pages").value;
-	let read = document.querySelector("#read").checked;
+	let title = titleInput.value;
+	let author = authorInput.value;
+	let pages = pagesInput.value;
+	let read = readStatus.checked;
 	addBookToLibrary(title, author, pages, read);
 	populateTable();
 	resetForm();
