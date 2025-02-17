@@ -5,6 +5,7 @@ const pagesInput = document.querySelector("#pages");
 const readStatus = document.querySelector("#read");
 const newBookBtn = document.querySelector("#new-book");
 const submitBtn = document.querySelector("#submit");
+const cancelBtn = document.querySelector("#cancel");
 
 const myLibrary = [];
 
@@ -84,5 +85,10 @@ submitBtn.addEventListener("click", (e) => {
 	let read = readStatus.checked;
 	addBookToLibrary(title, author, pages, read);
 	populateTable();
+	resetForm();
+});
+
+cancelBtn.addEventListener("click", (e) => {
+	e.preventDefault();
 	resetForm();
 });
