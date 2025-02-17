@@ -1,4 +1,4 @@
-const form = document.querySelector("form");
+const form = document.querySelector("dialog");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
@@ -70,10 +70,10 @@ function resetForm() {
 	authorInput.value = "";
 	pagesInput.value = "";
 	readStatus.checked = false;
-	form.style.display = "none";
+	form.close();
 }
 newBookBtn.addEventListener("click", () => {
-	form.style.display = "block";
+	form.showModal();
 });
 
 submitBtn.addEventListener("click", (e) => {
