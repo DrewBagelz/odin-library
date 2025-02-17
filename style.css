@@ -25,17 +25,6 @@ form {
 	text-align: left;
 }
 
-.read-pair {
-	display: flex;
-	align-items: center;
-	margin-bottom: 1em;
-}
-
-#read {
-	width: fit-content;
-	margin-bottom: auto;
-}
-
 label {
 	margin-bottom: 0.25em;
 }
