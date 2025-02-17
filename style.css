@@ -43,6 +43,16 @@ input[type="number"] {
 	-moz-appearance: textfield;
 }
 
+.button-pair {
+	display: flex;
+	gap: 5%;
+}
+
+.button-pair > * {
+	flex: auto;
+	margin-bottom: auto;
+}
+
 table {
 	border-collapse: collapse;
 	margin-left: auto;
