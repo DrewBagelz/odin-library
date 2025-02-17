@@ -15,7 +15,7 @@ body {
 dialog {
 	border: 3px solid blue;
 	border-radius: 10px;
-	bottom: 50%;
+	bottom: 60%;
 	min-width: 40%;
 }
 
