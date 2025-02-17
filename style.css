@@ -53,6 +53,13 @@ input[type="number"] {
 	margin-bottom: auto;
 }
 
+#new-book {
+	border: 3px solid blue;
+	border-radius: 10px;
+	margin-bottom: 1em;
+	font-size: 1.5rem;
+}
+
 table {
 	border-collapse: collapse;
 	margin-left: auto;
