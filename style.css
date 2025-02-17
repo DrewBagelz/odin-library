@@ -16,6 +16,32 @@ dialog {
 	border: 3px solid blue;
 	border-radius: 10px;
 	bottom: 50%;
+	min-width: 40%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.read-pair {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em;
+}
+
+#read {
+	width: fit-content;
+	margin-bottom: auto;
+}
+
+label {
+	margin-bottom: 0.25em;
+}
+
+input {
+	margin-bottom: 1em;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
