@@ -5,7 +5,6 @@ html {
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 	width: 100%;
 	min-height: 100vh;
@@ -64,9 +63,29 @@ table {
 	border-collapse: collapse;
 	margin-left: auto;
 	margin-right: auto;
+	text-align: left;
+	min-width: 65%;
 }
 
 th {
 	border: 1px solid black;
 	padding: 0.25em;
+	background-color: rgb(239, 239, 239);
+}
+
+td {
+	border: 1px solid black;
+	padding: 0.25em;
+}
+
+.center-td {
+	text-align: center;
+}
+
+.remove-cell {
+	border: none;
+}
+
+td > input[type="checkbox"] {
+	margin-bottom: auto;
 }

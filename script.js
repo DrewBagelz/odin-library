@@ -44,8 +44,10 @@ function populateTable() {
 		tableRow.appendChild(bookAuthor);
 		bookAuthor.textContent = `${book.author}`;
 		tableRow.appendChild(bookPages);
+		bookPages.classList.add("center-td");
 		bookPages.textContent = `${book.pages}`;
 		tableRow.appendChild(bookRead);
+		bookRead.classList.add("center-td");
 		bookRead.appendChild(checkbox);
 		checkbox.setAttribute("type", "checkbox");
 		checkbox.checked = book.read;
@@ -53,6 +55,7 @@ function populateTable() {
 			book.toggleRead();
 		});
 		tableRow.appendChild(removeBook);
+		removeBook.classList.add("remove-cell");
 		removeBook.appendChild(removeBtn);
 		removeBtn.textContent = "X";
 		removeBtn.addEventListener("click", () => {
