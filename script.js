@@ -1,4 +1,5 @@
 const form = document.querySelector("dialog");
+const table = document.querySelector("table");
 const titleInput = document.querySelector("#title");
 const authorInput = document.querySelector("#author");
 const pagesInput = document.querySelector("#pages");
@@ -67,6 +68,7 @@ function populateTable() {
 function removeFromLibrary(index) {
 	myLibrary.splice(index, 1);
 	populateTable();
+	hideTable();
 }
 
 function resetForm() {
@@ -76,6 +78,15 @@ function resetForm() {
 	readStatus.checked = false;
 	form.close();
 }
+
+function hideTable() {
+	if (myLibrary.length === 0) {
+		table.classList.add("hide-table");
+	} else if (myLibrary.length > 0) {
+		table.classList.remove("hide-table");
+	}
+}
+
 newBookBtn.addEventListener("click", () => {
 	form.showModal();
 });
@@ -88,6 +99,7 @@ submitBtn.addEventListener("click", (e) => {
 	let read = readStatus.checked;
 	addBookToLibrary(title, author, pages, read);
 	populateTable();
+	hideTable();
 	resetForm();
 });
 
@@ -95,3 +107,5 @@ cancelBtn.addEventListener("click", (e) => {
 	e.preventDefault();
 	resetForm();
 });
+
+hideTable();

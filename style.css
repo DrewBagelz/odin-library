@@ -78,6 +78,10 @@ td {
 	padding: 0.25em;
 }
 
+td > input[type="checkbox"] {
+	margin-bottom: auto;
+}
+
 .center-td {
 	text-align: center;
 }
@@ -86,6 +90,6 @@ td {
 	border: none;
 }
 
-td > input[type="checkbox"] {
-	margin-bottom: auto;
+.hide-table {
+	display: none;
 }
